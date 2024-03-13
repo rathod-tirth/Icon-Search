@@ -1,0 +1,39 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "username": "tirth",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "username": "john",
+      "password": "789"
+    },
+    {
+      "id": "0308",
+      "username": "james",
+      "password": "456"
+    },
+    {
+      "id": "7457",
+      "username": "john",
+      "password": "123"
+    },
+    {
+      "id": "6481",
+      "username": "jasmine",
+      "password": "123"
+    },
+    {
+      "id": "5358",
+      "username": "jake",
+      "password": "123"
+    },
+    {
+      "id": "9289",
+      "username": "nolan",
+      "password": "abc123"
+    }
+  ]
+}
