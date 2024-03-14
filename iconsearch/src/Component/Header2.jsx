@@ -23,7 +23,7 @@ export default function Header2({ handleFilter }) {
   return (
     <>
       {/* nav bar */}
-      <AppBar position="static" style={{ background: "#01579b", }}>
+      <AppBar position="sticky" sx={{ marginBottom: "1rem" }} style={{ background: "#006064", }}>
         <Toolbar>
           {/* title */}
           <Typography
