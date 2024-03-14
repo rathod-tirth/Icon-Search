@@ -9,25 +9,23 @@ import { Button } from '@mui/material';
 import LoginModal from './LoginModal';
 import SignUpModal from './SignUpModal';
 
-export default function Header2({handleFilter}) {
-    const [value,setValue]=React.useState("")
-    const [isLoginModal,setIsLoginModal]=useState(false)
-    const [isSignUpModal,setIsSignUpModal]=useState(false)
-    const [isLogin,setIsLogin]=useState(false)
+export default function Header2({ handleFilter }) {
+  const [value, setValue] = React.useState("")
+  const [isLoginModal, setIsLoginModal] = useState(false)
+  const [isSignUpModal, setIsSignUpModal] = useState(false)
 
-    // seach bar
-    const handleChange=(e)=>{
-        setValue(e.target.value)
-        handleFilter(value)
-        console.log(value);
-    }
+  // seach bar
+  const handleChange = (e) => {
+    setValue(e.target.value)
+    handleFilter(e.target.value)
+  }
 
   return (
     <>
-        {/* nav bar */}
-      <AppBar position="static" style={{background:"#01579b",}}>
+      {/* nav bar */}
+      <AppBar position="static" style={{ background: "#01579b", }}>
         <Toolbar>
-            {/* title */}
+          {/* title */}
           <Typography
             variant="h6"
             noWrap
@@ -38,9 +36,9 @@ export default function Header2({handleFilter}) {
           </Typography>
 
           {/* login button */}
-          <Button color="inherit" variant='outlined' style={{margin:"1rem"}} onClick={()=>setIsLoginModal(true)}>Login</Button>
+          <Button color="inherit" variant='outlined' style={{ margin: "1rem" }} onClick={() => setIsLoginModal(true)}>Login</Button>
           {/* signup */}
-          <Button color="inherit" variant='outlined' onClick={()=>setIsSignUpModal(true)}>SignUp</Button>
+          <Button color="inherit" variant='outlined' onClick={() => setIsSignUpModal(true)}>SignUp</Button>
 
           {isSignUpModal && <SignUpModal isSignUpModal={isSignUpModal} setIsSignUpModal={setIsSignUpModal} />}
           {isLoginModal && <LoginModal isLoginModal={isLoginModal} setIsLoginModal={setIsLoginModal} />}
@@ -58,49 +56,49 @@ export default function Header2({handleFilter}) {
           </Search>
         </Toolbar>
       </AppBar>
-      </>
+    </>
   );
 }
 
 // styled components for search bar
 const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  }));
-  
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
+  },
 }));
-  
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    width: '100%',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      [theme.breakpoints.up('sm')]: {
-        width: '12ch',
-        '&:focus': {
-          width: '20ch',
-        },
+  color: 'inherit',
+  width: '100%',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
       },
     },
+  },
 }));
