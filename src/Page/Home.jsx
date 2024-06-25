@@ -2,9 +2,15 @@ import React, { useMemo, useState, useTransition } from 'react'
 import { Alert, Button, CircularProgress, Grid } from '@mui/material'
 import SimpleCard from '../Component/SimpleCard'
 import * as fab from '@fortawesome/free-brands-svg-icons';
+import * as fas from '@fortawesome/free-solid-svg-icons';
+import * as far from '@fortawesome/free-regular-svg-icons'
 import Header2 from '../Component/Header2';
 
-const originaList = Object.values(fab).slice(0, -2);
+const fabList = Object.values(fab).slice(0, -2);
+const fasList = Object.values(fas).slice(0, -3);
+const farList = Object.values(far).slice(0, -3);
+
+const originaList = [...fabList, ...fasList, farList];
 
 function Home() {
     // font Awesome icon list
