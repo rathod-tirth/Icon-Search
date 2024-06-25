@@ -27,8 +27,9 @@ function Home() {
     }
 
     // copies to clipboard
-    const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text)
+    const copyToClipboard = (icon) => {
+        const svgElement = document.querySelector(`[data-icon="${icon.iconName}"]`).outerHTML;
+        navigator.clipboard.writeText(svgElement)
         setIsCopy(true)
     };
 
@@ -56,7 +57,7 @@ function Home() {
                     {iconArray.map((icon, index) => {
                         return (
                             <Grid item xs={1} key={index} >
-                                <Button size='small' variant='text' color='info' style={{ width: "5rem", height: "5rem", }} onClick={() => copyToClipboard(icon.iconName)}>
+                                <Button size='small' variant='text' color='info' style={{ width: "5rem", height: "5rem", }} onClick={() => copyToClipboard(icon)}>
                                     <SimpleCard icon={icon} />
                                 </Button>
                             </Grid>
