@@ -10,7 +10,7 @@ const fabList = Object.values(fab).slice(0, -2);
 const fasList = Object.values(fas).slice(0, -3);
 const farList = Object.values(far).slice(0, -3);
 
-const originaList = [...fabList, ...fasList, farList];
+const originaList = [...fabList, ...fasList, ...farList];
 
 function Home() {
     // font Awesome icon list
